@@ -4,17 +4,19 @@ const app = express()
 const rec_cam = require('./rec_cam')
 const fs = require('fs')
 
-
-
 app.listen(80)
 app.set('view engine', 'ejs')
 app.use(express.static('.'))
+
+// user requests home
 app.get('/', (req, res) => {
-        res.render('frontcam',{fols:sidecam_recs()})
+res.render('frontcam',{fols:sidecam_recs()})
     })
+// user requests sidecam
 app.get('/sidecam', (req, res) => {
         res.render('sidecam',{fols:sidecam_recs()})
     })
+// user requests frontcam
 app.get('/frontcam', (req, res) => {
         res.render('frontcam',{fols:frontcam_recs()})
     })
