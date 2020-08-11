@@ -20,7 +20,7 @@ app.get('/frontcam', (req, res) => {
     })
 
 
-
+// getting files from frontcam folder
 function frontcam_recs(){
     //dir location
     const date_fols = fs.readdirSync('./videos/frontcam/') // returns arr
@@ -31,7 +31,7 @@ function frontcam_recs(){
     
     return fols_rec
 }
-
+// getting files from sidecam folder
 function sidecam_recs(){
     //dir location
     const date_fols = fs.readdirSync('./videos/sidecam/') // returns arr
