@@ -1,0 +1,32 @@
+<%- include('header'); -%>
+    <!-- Previous videos section -->
+    <div class="card bg-light-text-dark col-sm-12 col-md-12">
+            <div class="card-body">
+                <div class="card bg-dark text-white text-center w-75 mx-auto p-2">
+                    <h3>Previous videos Side Camera</h3>
+                </div><hr>
+                <div class="card align-middle w-50 mx-auto p-3">
+                    <% const fol_keys = Object.keys(fols)%>
+                    <% const last_video = Object.keys(fols)[0]; console.log(last_video)%>
+                    <h5 class="cars-title text-center"><%=fols[fol_keys[0]][0].split('.')[0]%></h5>
+                    <video class="w-100" controls src="videos/sidecam/<%=last_video%>/<%=fols[fol_keys[0]][0]%>"></video>
+                </div><hr><br>
+                <div class="container-fluid">
+                    <div class="row">
+                        
+                        <% fol_keys.forEach(key=>{fols[key].forEach(fol=>{ %>
+                        <div class="card bg-light col-sm-12 col-md-6 col-lg-3 p-1">
+                            <p class="card-title text-center text-dark"><small><%=fol.split('.')[0]%></small><p>
+                            <a href="#" data-toggle="tooltip" data-placement="bottom" title="<%=fol%>"><video class="w-100"controls src="videos/sidecam/<%=key%>/<%=fol%>"></video></a>
+                              
+                        </div>
+                         <%})})%> 
+                        
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
+
+        <%- include('footer'); -%>
